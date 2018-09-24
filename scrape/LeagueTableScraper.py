@@ -128,16 +128,3 @@ class LeagueTableScraper:
         
         self.logger.debug(f'leagueTable: {leagueTable}')
         return leagueTable
-
-
-
-        
-        
-
-
-
-    
-
-    
-
-
