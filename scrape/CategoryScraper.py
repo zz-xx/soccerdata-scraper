@@ -173,34 +173,3 @@ class CategoryScraper:
         self.logger.debug(f'Final dict:{leagueSeasons}')
 
         return leagueSeasons
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
