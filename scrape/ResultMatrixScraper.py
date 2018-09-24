@@ -242,3 +242,4 @@ class ResultMatrixScraper:
         self.logger.debug(f'processedResponse = {processedResponse}')
 
         return processedResponse
+        
