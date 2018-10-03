@@ -56,8 +56,8 @@ class _BarPlot:
 
         #labels also need to be reordered according to standings
         labels = standingsDf['Team'].tolist()
-        print(homeGoals)
-        print(awayGoals)
+        #print(homeGoals)
+        #print(awayGoals)
 
         #need to list the reverse list here because of plotly's behaviour of plotting top values below
         homeGoals = homeGoals[::-1]
@@ -110,18 +110,72 @@ class _BarPlot:
                     'size' : 15
             },
             plot_bgcolor = '#cce6ff',
-            paper_bgcolor = '#ccffff',
+            paper_bgcolor = '#ccffff'
         )
 
         fig = go.Figure(data=data, layout=layout)
         plot(fig, filename=self.location)
-
-
-
-    
     
 
 
+    def  make_gd_chart(self, standingsDf:pd.DataFrame):
+        '''Make a bar chart showing goal differences across teams
+        
+        Arguments:
+            standingsDf {pd.DataFrame} -- [description]
+        '''
+
+        x = standingsDf['GD'].tolist()[::-1]
+        y = standingsDf['Team'].tolist()[::-1]
 
 
-    
+        data = [
+            go.Bar(
+                x=x,
+                y=y,
+                marker=dict(
+                    #color='rgb(102, 255, 153)',
+                    color='#FF0099',
+                    line=dict(color='rgb(0, 0, 0)',
+                            width=2)
+                ),
+                orientation='h',
+            )
+       ]
+
+        layout = go.Layout(
+            autosize=False, height=800, width=800,
+            bargap=0.15, bargroupgap=0.1,
+            barmode='stack', hovermode='x',
+            margin=dict(r=30, l=225,
+                        b=75, t=125),
+            title=self.title,
+            xaxis=dict(
+                dtick=10, nticks=0,
+                gridcolor='rgb(102, 255, 153)',
+                linecolor='#000', linewidth=1,
+                mirror=True,
+                showticklabels=True, tick0=0, tickwidth=1,
+                title='<i>Goals Difference(GD)</i>',
+            ),
+            yaxis=dict(
+                anchor='x',
+                gridcolor='rgb(102, 255, 153)', gridwidth=1,
+                linecolor='#000', linewidth=1,
+                mirror=True, showgrid=False,
+                showline=True, zeroline=False,
+                showticklabels=True, tick0=0,
+                type='category',
+            ),
+            font = {
+                    'family' : 'Roboto, monospace',
+                    'color' : '#006600',
+                    'size' : 15
+            },
+            plot_bgcolor = '#cce6ff',
+            paper_bgcolor = '#ccffff'
+        )
+
+        fig = go.Figure(data=data, layout=layout)
+        plot(fig, filename=self.location)
+  

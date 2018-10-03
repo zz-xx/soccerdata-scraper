@@ -10,8 +10,8 @@ logger = logging.getLogger(__name__)
 logger.info('-----------------------------------------------------------------------------------')
 logger.info(f'Initializing {__name__}.')
 
-league = 'pl'
-season = '2017–18 Premier League'
+league = 'll'
+season = '2018–19 La Liga'
 
 logger.info('Getting available seasons..')
 seasons = (Category.Category()).get_league_seasons(league)

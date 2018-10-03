@@ -151,28 +151,4 @@ class CleanResults:
         
         #dont really need to return teams but doing it anyway
         return self.teams, resultsDfList
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-    
+  

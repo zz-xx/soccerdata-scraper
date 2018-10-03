@@ -102,11 +102,3 @@ class _BoxPlot:
             return layout, traces
         
         plot(fig, filename=self.location)
-
-
-    
-
-
-
-
-

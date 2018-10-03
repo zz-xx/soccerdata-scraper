@@ -131,16 +131,3 @@ class _LeagueTable:
         
         self.logger.debug(f'leagueTable: {leagueTable}')
         return leagueTable
-
-
-
-        
-        
-
-
-
-    
-
-    
-
-

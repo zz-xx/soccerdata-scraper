@@ -219,21 +219,3 @@ class _TopScorers:
 
         self.logger.debug(f'topScorersList = {z2}')
         return z2
-
-
-                
-
-
-
-
-
-
-    
-
-
-
-
-
-
-    
-

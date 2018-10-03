@@ -3,7 +3,7 @@ import logging
 import os
 
 from process import Clean
-from process._Plot import _BarPlot, _BoxPlot, _PieChart
+from process._Plot import _BarPlot, _BoxPlot, _PieChart, _DistPlot
 
 
 
@@ -53,7 +53,7 @@ class Plot:
         standingsDf = (Clean.CleanStandings(page)).make_df()
         values = [standingsDf['GF'].tolist(), standingsDf['GA'].tolist(), standingsDf['Pts'].tolist(), standingsDf['W'].tolist(), standingsDf['L'].tolist(), standingsDf['D'].tolist()]
         labels = ['GF', 'GA', 'Pts', 'W', 'L', 'D']
-        title = 'Statistics for GF (Goals For), GA (Goals Against), Pts (Points) <br> and W (Wins), L (Losses),D (Draws)'
+        title = 'Statistics for #GF (Goals For), #GA (Goals Against), #Pts (Points) <br> and #W (Wins), #L (Losses), #D (Draws)'
         _BoxPlot._BoxPlot(title, labels, values, location + '\\BoxPlot.html').make_box_plot(subplot=False)
 
         
@@ -61,40 +61,20 @@ class Plot:
         winsDf = (Clean.CleanResults(page)).make_win_statistics_df()
         (_PieChart._PieChart('Win Statistics', location + '\\WinsPieChart.html')).make_win_type_chart(winsDf)
 
+
         #wins and loses by percent according to teams
-        (_PieChart._PieChart('Overall Win and Lose percent by teams', location + '\\OverallWinsPie.html')).make_standings_donut_chart(standingsDf)
+        (_PieChart._PieChart('Overall #Win and #Lose percent by teams', location + '\\OverallWinsPie.html')).make_standings_donut_chart(standingsDf)
+
 
         #make bar chart for home and away goals by teams
         labels, resultsDfList = (Clean.CleanResults(page)).make_results_df()
-        (_BarPlot._BarPlot('Home and Away Goals scored by all teams', location + '\\HomeAwayBar.html')).make_home_away_goals_chart(labels, resultsDfList, standingsDf)
+        (_BarPlot._BarPlot('#Home and #Away Goals Scored by Teams', location + '\\HomeAwayBar.html')).make_home_away_goals_chart(labels, resultsDfList, standingsDf)
         
 
-
-        
-
-
-    
-        
+        #make histogram for goal difference according to standings
+        (_BarPlot._BarPlot('#Goals Difference (GD) based on Final Standings', location + '\\GoalDifferenceBar.html' )).make_gd_chart(standingsDf)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #make distplot for GA, GF and GD
+        title = 'Distplot with Normal Distribution for <br> #GF (Goals For), #GA (Goals Against) <br> and #Goals Difference (GD)'
+        (_DistPlot._DistPlot(title, location + '\\GoalsDistPlot.html')).make_normal_goal_distribution(standingsDf)
