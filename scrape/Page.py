@@ -99,7 +99,7 @@ class Page:
 
             #dumping scrape data into a JSON file 
             #maybe switch to mongo later which seems more suitable
-            dumpPath = f'.\\dump\\{self.leagueCode}'
+            dumpPath = f'.\\dump\\json\\{self.leagueCode}'
             if not os.path.exists(dumpPath):
                 os.makedirs(dumpPath)
 
