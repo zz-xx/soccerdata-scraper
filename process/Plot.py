@@ -44,7 +44,7 @@ class Plot:
 
 
         #set location for storing graphs create folders if they dont already exist
-        location = f'.\\dump\\graphs\\{leagueCode}\\{season}'
+        location = f'.\\dumps\\graphs\\{leagueCode}\\{season}'
         if not os.path.exists(location):
             os.makedirs(location)
         
