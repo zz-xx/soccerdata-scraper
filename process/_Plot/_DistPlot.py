@@ -22,16 +22,19 @@ class _DistPlot:
                             level=logging.INFO)
         '''
 
-        self.title = title
-        self.location = location
-
         self.logger = logging.getLogger(__name__)
+        
         self.logger.info('-----------------------------------------------------------------------------------')
         self.logger.info(f'Initializing {__name__}.')
 
+        self.title = title
+        self.location = location
+        
+        self.logger.info(f'Initializing {__name__} complete..!')
+
     
 
-    def make_normal_goal_distribution(self, standingsDf:pd.DataFrame):
+    def make_normal_goal_distribution(self, standingsDf:pd.DataFrame, dump):
         '''Make dataframe of goals from league table
         
         Arguments:
@@ -67,4 +70,8 @@ class _DistPlot:
 
         fig.layout.update(layout)
 
-        plot(fig, filename=self.location)
+        if dump == True:
+            plot(fig, filename=self.location, auto_open=False)
+        
+        divPlot = plot(fig, show_link=False, include_plotlyjs=False, output_type='div')
+        return divPlot

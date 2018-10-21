@@ -1,9 +1,11 @@
 import logging
 
+import numpy as np
 import pandas as pd
 import plotly.graph_objs as go
 from plotly.offline import plot
 
+#from pprint import pprint as pprint
 
 
 class _BarPlot:
@@ -35,13 +37,14 @@ class _BarPlot:
 
 
 
-    def make_home_away_goals_chart(self, labels:list, resultsDfList:list, standingsDf:pd.DataFrame):
+    def make_home_away_goals_chart(self, labels:list, resultsDfList:list, standingsDf:pd.DataFrame, dump:bool):
         '''[summary]
         
         Arguments:
             labels {list} -- [description]
             resultsDfList {list} -- [description]
             standingsDf {pd.DataFrame} -- [description]
+            bool -- [description]
         '''
 
         standings = standingsDf.copy()
@@ -50,14 +53,43 @@ class _BarPlot:
 
         resultsDfDict = dict(zip(labels, resultsDfList))
         #print(resultsDfDict)
-        homeGoals = [resultsDfDict[team].loc['GF'].sum() for team in standingsDf['Team'].tolist()]
 
-        awayGoals = [value - homeGoals[index]  for index, value in enumerate(totalGoals)]
 
-        #labels also need to be reordered according to standings
-        labels = standingsDf['Team'].tolist()
-        #print(homeGoals)
-        #print(awayGoals)
+        #major bug here if trying to arrange in standings order because of mismatch of labels 
+        #in results and standings, can't help it much except keeping alternative way ready
+        #specially for old bundesliga so need to keep long performance inefficient approach
+        homeGoals = None
+        awayGoals = None
+        #labels = None
+
+        try:
+            homeGoals = [resultsDfDict[team].loc['GF'].sum() for team in standingsDf['Team'].tolist()]
+
+            awayGoals = [value - homeGoals[index]  for index, value in enumerate(totalGoals)]
+
+            #labels also need to be reordered according to standings
+            labels = standingsDf['Team'].tolist()
+            #print(homeGoals)
+            #print(awayGoals)
+
+        except:
+            self.logger.info('Keyerror bug detected. Trying alternative approach.')
+
+            #now have to manually count all goals scored through results df which is pain
+            #also the histogram will now be in alphabetical order instead of standings table order
+            #doesn't matter much but standings order is better way to represent imo
+            #pprint(resultsDfList)
+            homeGoals = [resultsDfList[index].loc['GF'].sum() for index in range(0,len(labels))]
+
+            #len of labels and resultsdf should be same so no need to do explicit check
+            #if it's not then something else is wrong which is not here
+            #'-' was already replaced by np.nan while cleaning so np.nansum can be done 
+            #this is probably most convenient way to get sum without one more extra loop
+            awayGoals = [np.nansum(np.array([df.loc['GA'][team] for df in resultsDfList])) for team in labels] 
+            #print(homeGoals)
+            #print(awayGoals)
+            #print([a+homeGoals[i] for i,a in enumerate(awayGoals)])
+            
 
         #need to list the reverse list here because of plotly's behaviour of plotting top values below
         homeGoals = homeGoals[::-1]
@@ -98,12 +130,15 @@ class _BarPlot:
         layout = go.Layout(
             barmode='stack',
             title=self.title,
+            height=720, width=1280,
+            
             margin=go.layout.Margin(
                 l=250,
                 r=50,
                 b=100,
                 t=100,
-           ),
+            ),
+           
            font = {
                     'family' : 'Roboto, monospace',
                     'color' : '#006600',
@@ -114,11 +149,16 @@ class _BarPlot:
         )
 
         fig = go.Figure(data=data, layout=layout)
-        plot(fig, filename=self.location)
-    
+
+        if dump == True:
+            plot(fig, filename=self.location, auto_open=False)
+        
+        divPlot = plot(fig, show_link=False, include_plotlyjs=False, output_type='div')
+        return divPlot
 
 
-    def  make_gd_chart(self, standingsDf:pd.DataFrame):
+
+    def  make_gd_chart(self, standingsDf:pd.DataFrame, dump):
         '''Make a bar chart showing goal differences across teams
         
         Arguments:
@@ -127,12 +167,16 @@ class _BarPlot:
 
         x = standingsDf['GD'].tolist()[::-1]
         y = standingsDf['Team'].tolist()[::-1]
-
+        
+        #for hover info
+        text = [f"<b>{team}</b><br>Goals For: {standingsDf['GF'].tolist()[::-1][index]}<br>Goals Against: {standingsDf['GA'].tolist()[::-1][index]}<br>Goals Difference: {x[index]}" for index, team in enumerate(y)]
 
         data = [
             go.Bar(
                 x=x,
                 y=y,
+                text = text,
+                hoverinfo = 'text',
                 marker=dict(
                     #color='rgb(102, 255, 153)',
                     color='#FF0099',
@@ -177,5 +221,10 @@ class _BarPlot:
         )
 
         fig = go.Figure(data=data, layout=layout)
-        plot(fig, filename=self.location)
+
+        if dump == True:
+            plot(fig, filename=self.location, auto_open=False)
+        
+        divPlot = plot(fig, show_link=False, include_plotlyjs=False, output_type='div')
+        return divPlot
   

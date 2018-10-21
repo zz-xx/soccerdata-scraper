@@ -34,7 +34,7 @@ class _PieChart:
 
 
 
-    def make_win_type_chart(self, wins:pd.DataFrame):
+    def make_win_type_chart(self, wins:pd.DataFrame, dump):
         '''Make pie chart showing home wins, away wins and draws for a season
         
         Arguments:
@@ -67,11 +67,16 @@ class _PieChart:
         )
 
         fig = go.Figure(data=[trace], layout=layout)
-        plot(fig, filename=self.location)
+        
+        if dump == True:
+            plot(fig, filename=self.location, auto_open=False)
+        
+        divPlot = plot(fig, show_link=False, include_plotlyjs=False, output_type='div')
+        return divPlot
 
 
 
-    def make_standings_donut_chart(self, standings:pd.DataFrame):
+    def make_standings_donut_chart(self, standings:pd.DataFrame, dump):
         '''Makes a pie chart showing win and lose percent of each team from total games
         
         Arguments:
@@ -102,8 +107,8 @@ class _PieChart:
                 }],
             "layout": {
                     "title":"Total Win and Loss % by teams",
-                    #'width': 850,
-                    #'height': 500,
+                    'width': 1280,
+                    'height': 720,
                     "annotations": [
                         {
                             "font": {
@@ -134,8 +139,8 @@ class _PieChart:
                 }
             }
 
-        plot(fig, filename=self.location)
-
-
-    
-
+        if dump == True:
+            plot(fig, filename=self.location, auto_open=False)
+        
+        divPlot = plot(fig, show_link=False, include_plotlyjs=False, output_type='div')
+        return divPlot

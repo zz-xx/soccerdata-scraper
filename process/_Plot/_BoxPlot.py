@@ -10,7 +10,7 @@ class _BoxPlot:
     '''
 
 
-    def __init__(self, title:str, labels:list, values:list, location:str):
+    def __init__(self, title:str, labels:list, values:list, text:list, location:str):
         logging.basicConfig(level=logging.INFO)
         '''
         logging.basicConfig(filename=f'./scrape/{__name__}.log',
@@ -27,6 +27,7 @@ class _BoxPlot:
         self.title = title
         self.labels = labels
         self.values = values
+        self.text = text
         self.location = location
 
         self.logger.debug(f'Title = {self.title}')
@@ -38,7 +39,7 @@ class _BoxPlot:
 
 
 
-    def make_box_plot(self, subplot=False):
+    def make_box_plot(self, dump):
         '''Make the box plot and store it at location
         '''
 
@@ -62,13 +63,14 @@ class _BoxPlot:
                         size=2,
                     ),
                     line=dict(width=1),
+                    text=self.text
                 ))
 
         layout = go.Layout(
             
             title=self.title,
-            #width=1280,
-            #height=720,
+            width=1280,
+            height=720,
             autosize=True,
             yaxis=dict(
                 autorange=True,
@@ -97,8 +99,9 @@ class _BoxPlot:
         )
 
         fig = go.Figure(data=traces, layout=layout)
-
-        if subplot is True:
-            return layout, traces
         
-        plot(fig, filename=self.location)
+        if dump == True:
+            plot(fig, filename=self.location, auto_open=False)
+        
+        divPlot = plot(fig, show_link=False, include_plotlyjs=False, output_type='div')
+        return divPlot

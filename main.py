@@ -1,8 +1,5 @@
 import logging
-
-from scrape import Category, Page
-from process import Clean, Plot
-
+from gui.gui import RunApp
 
 
 logging.basicConfig(level=logging.INFO)
@@ -10,16 +7,6 @@ logger = logging.getLogger(__name__)
 logger.info('-----------------------------------------------------------------------------------')
 logger.info(f'Initializing {__name__}.')
 
-league = 'll'
-season = '2018–19 La Liga'
-
-logger.info('Getting available seasons..')
-seasons = (Category.Category()).get_league_seasons(league)
-logger.info('Recieved seasons..!')
-
-logger.info(f"Scraping data from page '{season}'...")
-page = (Page.Page(season, league, seasons)).get_data(dump=True)
-logger.info('Scraped data successfully..!')
-
-
-(Plot.Plot()).plot_single_season_report(page, season, league, seasons)
+app = RunApp()
+app.after(10, lambda: app.set_appwindow())
+app.mainloop()

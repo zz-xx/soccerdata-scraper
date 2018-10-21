@@ -4,7 +4,7 @@ import os
 
 from requests import get
 
-from scrape._page import _league_table, _result_matrix, _top_scorers
+from scrape._page import _LeagueTable, _ResultMatrix, _TopScorers
 
 
 class Page:
@@ -50,51 +50,51 @@ class Page:
         '''
 
         self.logger.info(f'Doing get on {self.url}.')
-
         response = get(self.url)
         self.logger.info(f'Request made with status code: {response.status_code}.')
+
+
+        #this is questionable way to do this but try and except is acceptable way
+        #to do flow control in python
+        leagueTable = None
+        results = None
+        topScorers = None
         
-
-        self.logger.info('Getting standings for season..')
-        leagueTable = (_league_table._LeagueTable(response.text)).get_league_table()
-
-        if leagueTable is not None:
+        try:
+            leagueTableScraper = _LeagueTable._LeagueTable(response.text) 
+            self.logger.info('Getting standings for season..')
+            leagueTable = leagueTableScraper.get_league_table()
             self.logger.info('Standings fetched successfully.')
-        else:
-            self.logger.info(f'Failed to fetch standings for this {self.url}.')
+        except:
+            self.logger.exception(f'Failed to fetch standings for this {self.url}.')
 
-        
-        self.logger.info('Getting results for season..')
-        results = (_result_matrix._ResultMatrix(response.text)).get_result_matrix()
-
-        if results is not None:
+        try:
+            resultsScraper =  _ResultMatrix._ResultMatrix(response.text) 
+            self.logger.info('Getting results for season..')
+            results = resultsScraper.get_result_matrix()
             self.logger.info('Results fetched successfully.')
-        else:
-            self.logger.info(f'Failed to fetch results for this {self.url}.')
+        except:
+            self.logger.exception(f'Failed to fetch results for this {self.url}.')
 
-        
-        self.logger.info('Getting top scorers for season..')
-        topScorers = (_top_scorers._TopScorers(response.text, self.url, self.seasons, self.leagueCode)).get_top_scorers()
-
-        if topScorers is not None:
-            self.logger.info('Top scorers fetched successfully.')
-        else:
-            self.logger.info(f'Failed to fetch top scorers for this {self.url}.')
+        try:
+            topScorersScraper = _TopScorers._TopScorers(response.text, self.url, self.seasons, self.leagueCode)
+            self.logger.info('Getting top scorers for season..')
+            topScorers = topScorersScraper.get_top_scorers()
+            self.logger.info('Top Scorers fetched successfully.')
+        except:
+            self.logger.exception(f'Failed to fetch top scorers for this {self.url}.')
 
 
         self.logger.info('Parsing all page data together...')
-        
         pageData = {
             'Standings' : leagueTable,
             'Results' :  results,
             'Top Scorers' : topScorers
-            }
-        
+        }
         self.logger.debug(f'pageData = {pageData}')
-
         self.logger.info('Parsed page data successfully.')
 
-
+       
         if dump == True:
 
             #dumping scrape data into a JSON file 
