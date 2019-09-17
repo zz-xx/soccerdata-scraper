@@ -37,8 +37,6 @@ Current available leagues for *scraping* and then visualizations are given below
   
 </table>
 
-While this has been extensively tested, some specific visualizations for some seasons might fail due to page changes or some other reasons. Even then visualization will work for whatever data that was scraped and parsable.
-
 
 # Requirements
 Install the dependencies listed below manually or use _requirements.txt_
@@ -102,3 +100,9 @@ Contents of _json_ folder after selecting a league look something like this.  Al
 
 _reports_ folder contains the all complete season wise interactive visualization reports for each league, as seen through our interface. It's contents after selecting a league should look something like this. 
 ![](/media/reportsfolder.PNG?raw=true)
+
+
+## Note
+While this has been extensively tested, some specific visualizations for some seasons might fail due to page changes or some other reasons. Even in such possibility, visualizations should still work for whatsoever data that was scraped and parsed without any issues.
+
+
