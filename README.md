@@ -41,7 +41,7 @@ While this has been extensively tested, some specific visualizations for some se
 
 
 # Requirements
-Install the dependencies listed above yourself or use _requirements.txt_
+Install the dependencies listed below manually or use _requirements.txt_
 > pip install -r requirements.txt
 
 List of libraries apart from standard ones that are required to make soccerdata-scraper work correctly. Use of ***Python 3.7.x*** or higher and most recently available stable builds for libraries is recommended.
@@ -93,6 +93,7 @@ All three folders will contains 4 sub folders one for each league.
 
 Contents of _graphs_ folder look something like this, after selecting a league. 
 ![](/media/graphleagues.PNG?raw=true)
+
 After selecting the respective season folder, individual visualizations can be interacted with.
 ![](/media/graphleaguefolder.PNG?raw=true)
 
