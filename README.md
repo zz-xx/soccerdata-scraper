@@ -81,7 +81,7 @@ After making sure all dependencies are installed correctly, execute _main.py_. I
 
 # Output
 
-![](/media/outwindow.PNG?raw=true) A new window should open up which contains interactive visualizations for selected season's data. Click on sub headings in this window to expand them and view the respective visualizations inside them. All generated graphs can be interacted with in this window. A complete interactive sample visualization report along which was shown here can be can be seen _here_.
+![](/media/outwindow.PNG?raw=true) A new window should open up which contains interactive visualizations for selected season's data. Click on sub headings in this window to expand them and view the respective visualizations inside them. All generated graphs can be interacted within this window. A complete sample interactive visualization report which was shown here, can be can be seen _here_.
 
 Also all the visualization reports generated are stored in a _html_ file and can be interacted again through a web browser or if only some visualizations are required, they are also stored separately in a _html_ file and can be retrieved individually. Along with this all the scraped data is further parsed into a _JSON_ file and stored, should you only need the data and not visualizations.
 
