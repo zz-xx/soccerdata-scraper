@@ -1,2 +1,2 @@
-# soccerdata-scraper
-Scrape soccer data across the leagues from Wikipedia and do various analysis on it.
+## Basic Overview
+Scrape soccer data from Wikipedia across tier 1 European Football Leagues and make interactive as well as interesting data visualizations from it. 
