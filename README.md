@@ -1,5 +1,5 @@
-## Basic Overview
-Scrape soccer data from ***Wikipedia*** across tier 1 European Football Leagues and make interactive as well as interesting data visualizations from it. 
+# Basic Overview
+_soccerdata-scraper_ scrapes soccer data from ***Wikipedia*** across tier 1 European Football Leagues and makes interactive as well as interesting data visualizations from it. 
 
 Current available leagues for *scraping* and then visualizations are given below.
 
@@ -7,7 +7,7 @@ Current available leagues for *scraping* and then visualizations are given below
   
   <tr>
   <td><b>League</b></td>
-  <td><b>Years</b></td>
+  <td><b>Seasons</b></td>
   <td><b>Source</b></td>
   </tr>
    
@@ -36,3 +36,34 @@ Current available leagues for *scraping* and then visualizations are given below
   </tr>
   
 </table>
+
+While this has been extensively tested, some specific visualizations for some seasons might fail due to page changes or some other reasons. Even then visualization will work for whatever data that was scraped and parsable.
+
+
+# Requirements
+
+List of libraries apart from standard ones that are required to make soccerdata-scraper work correctly. Use of ***Python 3.7.x*** or higher and most recently available stable builds for libraries is recommended.
+
+## [bs4](https://pypi.org/project/beautifulsoup4/)
+Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.
+
+## [requests](https://pypi.org/project/requests/)
+Requests is an elegant and simple HTTP library for Python, built for human beings.
+
+## [numpy](https://pypi.org/project/numpy/)
+NumPy is the fundamental package for array computing with Python.
+
+## [pandas](https://pypi.org/project/pandas/)
+Powerful data structures for data analysis, time series, and statistics
+
+## [plotly](https://pypi.org/project/plotly/)
+An open-source, interactive graphing library for Python
+
+## [cefpython3](https://pypi.org/project/cefpython3/)
+GUI toolkit for embedding a Chromium widget in desktop applications
+
+## [PIL](https://pypi.org/project/Pillow/)
+Python Imaging Library
+
+
+
