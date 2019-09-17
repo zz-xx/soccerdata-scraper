@@ -66,4 +66,10 @@ GUI toolkit for embedding a Chromium widget in desktop applications
 Python Imaging Library
 
 
+# Usage
+
+Install the dependencies listed above yourself or use _requirements.txt_
+> pip install -r requirements.txt
+
+
 
