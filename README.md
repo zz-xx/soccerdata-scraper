@@ -41,6 +41,8 @@ While this has been extensively tested, some specific visualizations for some se
 
 
 # Requirements
+Install the dependencies listed above yourself or use _requirements.txt_
+> pip install -r requirements.txt
 
 List of libraries apart from standard ones that are required to make soccerdata-scraper work correctly. Use of ***Python 3.7.x*** or higher and most recently available stable builds for libraries is recommended.
 
@@ -68,8 +70,29 @@ Python Imaging Library
 
 # Usage
 
-Install the dependencies listed above yourself or use _requirements.txt_
-> pip install -r requirements.txt
+After making sure all dependencies are installed correctly, execute _main.py_. If everything's right, a graphical interface window should pop up.
 
+1. Press ![_START_.](/media/GUI1.PNG?raw=true)
+
+2. Select a league from ![top bar.](/media/GUI2.PNG?raw=true)
+
+3. Click on _Select Season_ ![drop down.](/media/GUI3.PNG?raw=true)
+
+
+# Output
+
+A ![new window](/media/outwindow.PNG?raw=true) should open up which contains interactive visualizations for selected season's data. Click on sub headings in this window to expand them and view the respective visualizations inside them. All generated graphs can be interacted with in this window. A complete interactive sample visualization report along which was shown here can be can be seen _here_.
+
+Also all the visualization reports generated are stored in a _html_ file and can be interacted again through a web browser or if only some visualizations are required, they are also stored separately in a _html_ file and can be retrieved individually. Along with this all the scraped data is further parsed into a _JSON_ file and stored, should you only need the data and not visualizations.
+
+A new folder called _dumps_ should appear in soccerdata-scraper directory or whatever you have named current directory. Its contents will be something like ![this.](/media/dumps.PNG?raw=true)
+
+All three folders will contains 4 sub folders ![one for each league.](/media/league.PNG?raw=true)
+
+Contents of _graphs_ folder look something like ![this,](/media/graphleagues.PNG?raw=true) after selecting a league. By selecting the respective ![league folder,](/media/graphleaguefolder.PNG?raw=true) individual visualizations can be interacted with.
+
+Contents of _json_ folder after selecting a league look something like ![this.](/media/jsonfolder.PNG?raw=true) All the data used for visualization can be obtained from this files.
+
+_reports_ folder contains the all complete season wise interactive visualization reports for each league, as seen through our interface. It's contents after selecting a league should look something like ![this.](/media/reportsfolder.PNG?raw=true)
 
 
