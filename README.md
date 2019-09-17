@@ -89,7 +89,7 @@ A new folder called _dumps_ should appear in soccerdata-scraper directory or wha
 
 All three folders will contains 4 sub folders one for each league. ![](/media/league.PNG?raw=true)
 
-Contents of _graphs_ folder look something like this, ![](/media/graphleagues.PNG?raw=true) after selecting a league. By selecting the respective league folder, ![](/media/graphleaguefolder.PNG?raw=true) individual visualizations can be interacted with.
+Contents of _graphs_ folder look something like this, ![](/media/graphleagues.PNG?raw=true) after selecting a league. After selecting the respective season folder, ![](/media/graphleaguefolder.PNG?raw=true) individual visualizations can be interacted with.
 
 Contents of _json_ folder after selecting a league look something like this. ![](/media/jsonfolder.PNG?raw=true) All the data used for visualization can be obtained from this files.
 
