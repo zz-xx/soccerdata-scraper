@@ -74,7 +74,7 @@ After making sure all dependencies are installed correctly, execute _main.py_. I
 
 2. Select a league from top bar. ![](/media/GUI2.PNG?raw=true)
 
-3. Click on _Select Season_ drop down. ![](/media/GUI3.png?raw=true)
+3. Click on _Select Season_ drop down. ![](/media/GUI.png?raw=true)
 
 
 # Output
