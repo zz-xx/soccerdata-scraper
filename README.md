@@ -70,11 +70,11 @@ Python Imaging Library
 
 After making sure all dependencies are installed correctly, execute _main.py_. If everything's right, a graphical interface window should pop up.
 
-1. Press _START_. ![](/media/GUI1.PNG?raw=true)
+1. Press _START_. ![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI1.PNG)
 
-2. Select a league from top bar. ![](/media/GUI2.PNG?raw=true)
+2. Select a league from top bar. ![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI2.PNG)
 
-3. Click on _Select Season_ drop down. ![](/media/GUI.png?raw=true)
+3. Click on _Select Season_ drop down. ![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI.png)
 
 
 # Output
@@ -84,22 +84,22 @@ After making sure all dependencies are installed correctly, execute _main.py_. I
 Also all the visualization reports generated are stored in a _html_ file and can be interacted again through a web browser or if only some visualizations are required, they are also stored separately in a _html_ file and can be retrieved individually. Along with this all the scraped data is further parsed into a _JSON_ file and stored, should you only need the data and not visualizations.
 
 A new folder called _dumps_ should appear in soccerdata-scraper directory or whatever you have named current directory. Its contents will be something like this. 
-![](/media/dumps.PNG?raw=true)
+![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/dumps.PNG)
 
 All three folders will contains 4 sub folders one for each league. 
-![](/media/league.PNG?raw=true)
+![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/league.PNG)
 
 Contents of _graphs_ folder look something like this, after selecting a league. 
-![](/media/graphleagues.PNG?raw=true)
+![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/graphleagues.PNG)
 
 After selecting the respective season folder, individual visualizations can be interacted with.
-![](/media/graphleaguefolder.PNG?raw=true)
+![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/graphleaguefolder.PNG)
 
 Contents of _json_ folder after selecting a league look something like this.  All the data used for visualization can be obtained from this files. 
-![](/media/jsonfolder.PNG?raw=true)
+![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/jsonfolder.PNG)
 
 _reports_ folder contains the all complete season wise interactive visualization reports for each league, as seen through our interface. It's contents after selecting a league should look something like this. 
-![](/media/reportsfolder.PNG?raw=true)
+![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/reportsfolder.PNG)
 
 
 ## Note
