@@ -14,25 +14,25 @@ Current available leagues for *scraping* and then visualizations are given below
   <tr>
   <td>English Premier League</td>
   <td>1992-93 to <i>present</i></td>
-  <td>https://en.wikipedia.org/wiki/Category:Premier_League_seasons</td>
+  <td><a href="https://en.wikipedia.org/wiki/Category:Premier_League_seasons">https://en.wikipedia.org/wiki/Category:Premier_League_seasons</a></td>
   </tr>
   
   <tr>
   <td>Spanish La Liga</td>
   <td>1929-30 to <i>present</i></td>
-  <td>https://en.wikipedia.org/wiki/Category:La_Liga_seasons</td>
+  <td><a href="https://en.wikipedia.org/wiki/Category:La_Liga_seasons">https://en.wikipedia.org/wiki/Category:La_Liga_seasons</a></td>
   </tr>
   
   <tr>
   <td>Italian Serie A</td>
   <td>1929-30 to <i>present</i></td>
-  <td>https://en.wikipedia.org/wiki/Category:Serie_A_seasons</td>
+  <td><a href="https://en.wikipedia.org/wiki/Category:Serie_A_seasons">https://en.wikipedia.org/wiki/Category:Serie_A_seasons</a></td>
   </tr>
   
   <tr>
   <td>German Bundesliga</td>
   <td>1963-64 to <i>present</i></td>
-  <td>https://en.wikipedia.org/wiki/Category:Bundesliga_seasons</td>
+  <td><a href="https://en.wikipedia.org/wiki/Category:Bundesliga_seasons">https://en.wikipedia.org/wiki/Category:Bundesliga_seasons</a></td>
   </tr>
   
 </table>
