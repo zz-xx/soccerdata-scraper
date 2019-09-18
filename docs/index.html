@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Basic Overview | soccerdata-scraper</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Basic Overview" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Scrape soccer data from Wikipedia across various European football leagues and perform interactive data visualizations on it." />
+<meta property="og:description" content="Scrape soccer data from Wikipedia across various European football leagues and perform interactive data visualizations on it." />
+<link rel="canonical" href="https://zz-xx.github.io/soccerdata-scraper/" />
+<meta property="og:url" content="https://zz-xx.github.io/soccerdata-scraper/" />
+<meta property="og:site_name" content="soccerdata-scraper" />
+<script type="application/ld+json">
+{"@type":"WebSite","headline":"Basic Overview","url":"https://zz-xx.github.io/soccerdata-scraper/","name":"soccerdata-scraper","description":"Scrape soccer data from Wikipedia across various European football leagues and perform interactive data visualizations on it.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/soccerdata-scraper/assets/css/style.css?v=d74e762e5e676ff49226dbc52ddaa5ab5c0e8232">
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://zz-xx.github.io/soccerdata-scraper/">soccerdata-scraper</a></h1>
+      <hr>
+
+      <h1 id="basic-overview">Basic Overview</h1>
+      <hr>
+<p><em>soccerdata-scraper</em> scrapes soccer data from <strong><em>Wikipedia</em></strong> across tier 1 European Football Leagues and makes interactive as well as interesting data visualizations from it.</p>
+
+<p>Current available leagues for <em>scraping</em> and then visualizations are given below.</p>
+
+<table border="1">
+  
+  <tr>
+  <td><b>League</b></td>
+  <td><b>Seasons</b></td>
+  <td><b>Source</b></td>
+  </tr>
+   
+  <tr>
+  <td>English Premier League</td>
+  <td>1992-93 to <i>present</i></td>
+  <td><a href="https://en.wikipedia.org/wiki/Category:Premier_League_seasons">https://en.wikipedia.org/wiki/Category:Premier_League_seasons</a></td>
+  </tr>
+  
+  <tr>
+  <td>Spanish La Liga</td>
+  <td>1929-30 to <i>present</i></td>
+  <td><a href="https://en.wikipedia.org/wiki/Category:La_Liga_seasons">https://en.wikipedia.org/wiki/Category:La_Liga_seasons</a></td>
+  </tr>
+  
+  <tr>
+  <td>Italian Serie A</td>
+  <td>1929-30 to <i>present</i></td>
+  <td><a href="https://en.wikipedia.org/wiki/Category:Serie_A_seasons">https://en.wikipedia.org/wiki/Category:Serie_A_seasons</a></td>
+  </tr>
+  
+  <tr>
+  <td>German Bundesliga</td>
+  <td>1963-64 to <i>present</i></td>
+  <td><a href="https://en.wikipedia.org/wiki/Category:Bundesliga_seasons">https://en.wikipedia.org/wiki/Category:Bundesliga_seasons</a></td>
+  </tr>
+  
+</table>
+
+<hr>
+<h1 id="requirements">Requirements</h1>
+<hr>
+<p>Install the dependencies listed below manually or use <em>requirements.txt</em></p>
+<blockquote>
+  <p>pip install -r requirements.txt</p>
+</blockquote>
+
+<p>List of libraries apart from standard ones that are required to make soccerdata-scraper work correctly. Use of <strong><em>Python 3.7.x</em></strong> or higher and most recently available stable builds for libraries is recommended.</p>
+
+
+
+<h2 id="bs4"><a href="https://pypi.org/project/beautifulsoup4/">bs4</a></h2>
+<p>Beautiful Soup is a library that makes it easy to scrape information from web pages. It sits atop an HTML or XML parser, providing Pythonic idioms for iterating, searching, and modifying the parse tree.</p>
+
+<h2 id="requests"><a href="https://pypi.org/project/requests/">requests</a></h2>
+<p>Requests is an elegant and simple HTTP library for Python, built for human beings.</p>
+
+<h2 id="numpy"><a href="https://pypi.org/project/numpy/">numpy</a></h2>
+<p>NumPy is the fundamental package for array computing with Python.</p>
+
+<h2 id="pandas"><a href="https://pypi.org/project/pandas/">pandas</a></h2>
+<p>Powerful data structures for data analysis, time series, and statistics</p>
+
+<h2 id="plotly"><a href="https://pypi.org/project/plotly/">plotly</a></h2>
+<p>An open-source, interactive graphing library for Python</p>
+
+<h2 id="cefpython3"><a href="https://pypi.org/project/cefpython3/">cefpython3</a></h2>
+<p>GUI toolkit for embedding a Chromium widget in desktop applications</p>
+
+<h2 id="pil"><a href="https://pypi.org/project/Pillow/">PIL</a></h2>
+<p>Python Imaging Library</p>
+
+
+
+
+<hr>
+<h1 id="usage">Usage</h1>
+<hr>
+
+<p>After making sure all dependencies are installed correctly, execute <em>main.py</em>. If everything’s right, a graphical interface window should pop up.</p>
+
+<ol>
+  <li>
+    <p>Press <em>START</em>. 
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI1.PNG" /></p>
+  </li>
+  <li>
+    <p>Select a league from top bar.
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI2.PNG" /></p>
+  </li>
+  <li>
+    <p>Click on <em>Select Season</em> drop down. 
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI.png" /></p>
+  </li>
+</ol>
+
+<hr>
+<h1 id="output">Output</h1>
+<hr>
+
+<p><img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/outwindow.PNG" />
+A new window should open up which contains interactive visualizations for selected season’s data. Click on sub headings in this window to expand them and view the respective visualizations inside them. All generated graphs can be interacted within this window. A complete sample interactive visualization report which was shown here, can be can be seen <a href="docs/Bundesliga.html">here.</a></p>
+
+<p>Also all the visualization reports generated are stored in a <em>html</em> file and can be interacted again through a web browser or if only some visualizations are required, they are also stored separately in a <em>html</em> file and can be retrieved individually. Along with this all the scraped data is further parsed into a <em>JSON</em> file and stored, should you only need the data and not visualizations.</p>
+
+<p>A new folder called <em>dumps</em> should appear in soccerdata-scraper directory or whatever you have named current directory. Its contents will be something like this. 
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/dumps.PNG" /></p>
+
+<p>All three folders will contains 4 sub folders one for each league. 
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/league.PNG" /></p>
+
+<p>Contents of <em>graphs</em> folder look something like this, after selecting a league. 
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/graphleagues.PNG" /></p>
+
+<p>After selecting the respective season folder, individual visualizations can be interacted with.
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/graphleaguefolder.PNG" /></p>
+
+<p>Contents of <em>json</em> folder after selecting a league look something like this.  All the data used for visualization can be obtained from this files. 
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/jsonfolder.PNG" /></p>
+
+<p><em>reports</em> folder contains the all complete season wise interactive visualization reports for each league, as seen through our interface. It’s contents after selecting a league should look something like this. 
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/reportsfolder.PNG" /></p>
+
+<hr>
+<h2 id="note">Note</h2>
+<hr>
+<p>While this has been extensively tested, some specific visualizations for some seasons might fail due to page changes or some other reasons. Even in such possibility, visualizations should still work for whatsoever data that was scraped and parsed without any issues.</p>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/zz-xx/soccerdata-scraper/edit/master/docs/README.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+    
+  </body>
+</html>
