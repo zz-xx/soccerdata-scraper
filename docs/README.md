@@ -82,30 +82,29 @@ After making sure all dependencies are installed correctly, execute _main.py_. I
 
 # Output
 
-![](/media/outwindow.PNG?raw=true) A new window should open up which contains interactive visualizations for selected season's data. Click on sub headings in this window to expand them and view the respective visualizations inside them. All generated graphs can be interacted within this window. A complete sample interactive visualization report which was shown here, can be can be seen _here_.
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/outwindow.PNG">
+A new window should open up which contains interactive visualizations for selected season's data. Click on sub headings in this window to expand them and view the respective visualizations inside them. All generated graphs can be interacted within this window. A complete sample interactive visualization report which was shown here, can be can be seen _here_.
 
 Also all the visualization reports generated are stored in a _html_ file and can be interacted again through a web browser or if only some visualizations are required, they are also stored separately in a _html_ file and can be retrieved individually. Along with this all the scraped data is further parsed into a _JSON_ file and stored, should you only need the data and not visualizations.
 
 A new folder called _dumps_ should appear in soccerdata-scraper directory or whatever you have named current directory. Its contents will be something like this. 
-![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/dumps.PNG)
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/dumps.PNG">
 
 All three folders will contains 4 sub folders one for each league. 
-![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/league.PNG)
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/league.PNG">
 
 Contents of _graphs_ folder look something like this, after selecting a league. 
-![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/graphleagues.PNG)
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/graphleagues.PNG">
 
 After selecting the respective season folder, individual visualizations can be interacted with.
-![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/graphleaguefolder.PNG)
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/graphleaguefolder.PNG">
 
 Contents of _json_ folder after selecting a league look something like this.  All the data used for visualization can be obtained from this files. 
-![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/jsonfolder.PNG)
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/jsonfolder.PNG">
 
 _reports_ folder contains the all complete season wise interactive visualization reports for each league, as seen through our interface. It's contents after selecting a league should look something like this. 
-![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/reportsfolder.PNG)
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/reportsfolder.PNG">
 
 
 ## Note
 While this has been extensively tested, some specific visualizations for some seasons might fail due to page changes or some other reasons. Even in such possibility, visualizations should still work for whatsoever data that was scraped and parsed without any issues.
-
-
