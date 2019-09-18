@@ -70,11 +70,14 @@ Python Imaging Library
 
 After making sure all dependencies are installed correctly, execute _main.py_. If everything's right, a graphical interface window should pop up.
 
-1. Press _START_. ![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI1.PNG)
+1. Press _START_. 
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI1.PNG">
 
-2. Select a league from top bar. ![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI2.PNG)
+2. Select a league from top bar.
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI2.PNG">
 
-3. Click on _Select Season_ drop down. ![](https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI.png)
+3. Click on _Select Season_ drop down. 
+<img src="https://github.com/zz-xx/soccerdata-scraper/blob/master/media/GUI.png">
 
 
 # Output
