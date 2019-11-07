@@ -4,4 +4,4 @@ numpy ~= 1.15.1
 pandas ~= 0.23.4
 plotly ~= 3.2.1
 cefpython3 ~= 66.0
-pillow ~= 5.2.0
+pillow>=6.2.0
